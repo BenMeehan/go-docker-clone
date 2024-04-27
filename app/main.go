@@ -1,14 +1,14 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
 	"os/exec"
 )
 
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...
 func main() {
-	log.Println("Logs from your program will appear here!")
+	fmt.Println("Logs from your program will appear here!")
 	
 	command := os.Args[3]
 	args := os.Args[4:len(os.Args)]
@@ -16,9 +16,9 @@ func main() {
 	cmd := exec.Command(command, args...)
 	output, err := cmd.Output()
 	if err != nil {
-		log.Printf("Err: %v", err)
+		fmt.Printf("Err: %v", err)
 		os.Exit(1)
 	}
 	
-	log.Println(string(output))
+	fmt.Println(string(output))
 }
