@@ -8,8 +8,6 @@ import (
 
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...
 func main() {
-	fmt.Println("Logs from your program will appear here!")
-
 	command := os.Args[3]
 	args := os.Args[4:len(os.Args)]
 
